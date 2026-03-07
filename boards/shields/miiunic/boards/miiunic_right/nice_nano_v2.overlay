@@ -51,3 +51,10 @@
         sensitivity = "2x";
     };
 };
+
+&glidepoint {
+    status = "ok";
+};
+&glidepoint_listener {
+    status = "ok";
+};
