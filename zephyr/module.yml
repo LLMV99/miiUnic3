@@ -1,4 +1,0 @@
-name: zmk-keyboard-miiunic
-build:
-  settings:
-    board_root: .
