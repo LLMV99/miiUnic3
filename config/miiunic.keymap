@@ -172,10 +172,10 @@
         base_layer {
             display-name = "base";
             bindings = <
-&trans  &kp B           &kp L          &kp D           &kp C            &kp V             &kp J        &kp Y                 &kp O           &kp U          &comma_morph    &trans
-&trans  &hrm_l LMETA N  &hrm_l LALT R  &hrm_l LSHFT T  &hrm_l LCTRL S   &kp G             &kp P        &hrm_r LCTRL H        &hrm_r RSHFT A  &hrm_r LALT E  &hrm_r LMETA I  &trans
-        &kp X           &kp Q          &kp M           &kp W            &kp Z             &kp K        &kp F                 &kp SQT         &qexcl         &dot_morph
-                        &kp C_MUTE     &kp DEL         &bksp_esc_morph  &lt SYMBOL SPACE  &lt 2 ENTER  &magic_shift LSHFT 0  &kp TAB         &td_to_game
+&trans  &kp B           &kp L          &kp D           &kp C            &kp V                                      &kp J        &kp Y                 &kp O           &kp U          &comma_morph    &trans
+&trans  &hrm_l LMETA N  &hrm_l LALT R  &hrm_l LSHFT T  &hrm_l LCTRL S   &kp G                                      &kp P        &hrm_r LCTRL H        &hrm_r RSHFT A  &hrm_r LALT E  &hrm_r LMETA I  &trans
+&trans  &kp X           &kp Q          &kp M           &kp W            &kp Z                                      &kp K        &kp F                 &kp SQT         &qexcl         &dot_morph      &trans
+                                       &bksp_esc_morph &kp DEL          &lt SYMBOL SPACE  &kp C_MUTE  &td_to_game  &lt 2 ENTER  &magic_shift LSHFT 0  &kp TAB
             >;
 
             sensor-bindings =
