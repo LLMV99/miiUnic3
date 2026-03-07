@@ -54,12 +54,3 @@
         x-invert;
     };
 };
-
-&glidepoint_listener {
-    status = "okay";
-    device = <&glidepoint_right>;
-};
-
-&glidepoint_split_listener {
-    status = "okay";
-};
