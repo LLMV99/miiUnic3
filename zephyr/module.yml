@@ -1,4 +1,4 @@
-name: zmk-keyboard-temporal
+name: zmk-keyboard-miiunic
 build:
   settings:
     board_root: .
