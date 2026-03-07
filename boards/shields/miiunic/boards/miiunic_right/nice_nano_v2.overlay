@@ -40,17 +40,14 @@
 // devices on i2c0
 
 &i2c0 {
-    status = "okay";
-
-    glidepoint_right: glidepoint@2a {
+    input_device_right0: input_device_right0@2a {
+        status = "okay";
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
-        status = "okay";
-        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         sleep;
-        //no-taps;
-        //y-invert;
-        x-invert;
+        no-secondary-tap;
+        no-taps;
+        sensitivity = "2x";
     };
 };
