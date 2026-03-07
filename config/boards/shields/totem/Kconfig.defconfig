@@ -1,20 +1,19 @@
-# Copyright (c) 2024 Curtis Bollinger
+# Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_TEMPORAL_LEFT
+if SHIELD_TOTEM_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Temporal"
-
+    default "TOTEM"
+    
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_TEMPORAL_LEFT || SHIELD_TEMPORAL_RIGHT
+if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
 
 config ZMK_SPLIT
     default y
 
 endif
-
