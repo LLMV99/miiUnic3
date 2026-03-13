@@ -35,10 +35,12 @@
 // == Input devices ==
 // Enabling input-split for its own input devices
 // Adding input devices and assigning them to input-split
+/*
 &input_split_right0 {
     status = "okay";
     device = <&input_device_right0>;
 };
+*/
 
 &encoder_right0 {
     a-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -54,3 +56,21 @@
     b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 };
 
+// right
+&pro_micro_i2c {
+    status = "okay";
+    input_device_right0: input_device_right0@2a {
+        status = "okay";
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+        sleep;
+        no-secondary-tap;
+        no-taps;
+        sensitivity = "2x";
+    };
+};
+
+&input_listener_right0 {
+    device = <&input_device_right0>;
+};
