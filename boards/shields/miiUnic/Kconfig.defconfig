@@ -43,7 +43,7 @@ endif
 # ---------------------
 if BOARD_NICE_NANO_V2 && SHIELD_MIIUNIC_RIGHT
 
-config SPI
+config I2C
     default y
 
 endif
