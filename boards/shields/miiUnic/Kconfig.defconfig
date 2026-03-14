@@ -23,6 +23,9 @@ if SHIELD_MIIUNIC_LEFT || SHIELD_MIIUNIC_RIGHT
 config ZMK_SPLIT
     default y
 
+config ZMK_POINTING
+    default y
+
 endif
 
 # ---------------------
@@ -31,6 +34,16 @@ endif
 if BOARD_NICE_NANO_V2 && SHIELD_MIIUNIC_LEFT
 
 config SPI
+    default y
+
+endif
+
+# ---------------------
+# Kconfig for shield "miiunic_right" with board "nice_nano_v2"
+# ---------------------
+if BOARD_NICE_NANO_V2 && SHIELD_MIIUNIC_RIGHT
+
+config I2C
     default y
 
 endif
