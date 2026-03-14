@@ -7,13 +7,13 @@
         wakeup-source;
 
         col-gpios
-            = <&pro_micro 15 GPIO_ACTIVE_HIGH>
+            = <&pro_micro 14 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>
             , <&pro_micro 18 GPIO_ACTIVE_HIGH>
             , <&pro_micro 19 GPIO_ACTIVE_HIGH>
             , <&pro_micro 20 GPIO_ACTIVE_HIGH>
             , <&pro_micro 21 GPIO_ACTIVE_HIGH>
             , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
@@ -35,14 +35,16 @@
 // == Input devices ==
 // Enabling input-split for its own input devices
 // Adding input devices and assigning them to input-split
+/*
 &input_split_right0 {
     status = "okay";
     device = <&input_device_right0>;
 };
+*/
 
 &encoder_right0 {
-    a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    a-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     status = "okay";
 };
 
@@ -54,3 +56,21 @@
     b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 };
 
+// right
+&pro_micro_i2c {
+    status = "okay";
+    input_device_right0: input_device_right0@2a {
+        status = "okay";
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+        sleep;
+        no-secondary-tap;
+        no-taps;
+        sensitivity = "2x";
+    };
+};
+
+&input_listener_right0 {
+    device = <&input_device_right0>;
+};
